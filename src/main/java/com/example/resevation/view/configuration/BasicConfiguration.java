@@ -39,7 +39,7 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
      * en la cual están todos los recursos estáticos configurados anteriormente.
      */
     @Override
-    public void configure(WebSecurity web) throws Exception {
+    public void configure(WebSecurity web) {
         web
                 .ignoring()
                 .antMatchers("/resources/**",

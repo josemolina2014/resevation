@@ -44,7 +44,7 @@ public class ClientResource {
         Client client = clientService.findByIdentification(identification);
         if(client == null)
         {
-            return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else{
             client.setName(clientVo.getName());
@@ -71,7 +71,7 @@ public class ClientResource {
         if(client==null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        return new ResponseEntity<Client>(client, HttpStatus.OK);
+        return new ResponseEntity<>(client, HttpStatus.OK);
     }
 
 
