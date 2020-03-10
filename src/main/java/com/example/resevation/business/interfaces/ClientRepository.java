@@ -7,10 +7,11 @@ import java.util.List;
 
 public interface ClientRepository extends JpaRepository<Client, String> {
 
+
     /**
-     * defincion de metodo para buscar por apellido
-     * @param cliLastName
-     * @return
+     * definción de metodo para buscar por apellido
+     * @param lastName
+     * @return lista de clientes con el apellido indicado
      */
     public List<Client> findByLastName(String lastName);
 

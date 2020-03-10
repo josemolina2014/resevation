@@ -2,17 +2,17 @@ package com.example.resevation.business.service;
 
 import com.example.resevation.business.interfaces.ClientRepository;
 import com.example.resevation.model.Client;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
 public class ClientService
 {
     private final ClientRepository clientRepository;
 
-    /**
-     *
-     * @param clientRepository
-     */
+
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
     }
@@ -22,6 +22,7 @@ public class ClientService
      * @param client Cliente
      * @return Cliente creado
      */
+    @Transactional
     public Client create (Client client){
         return this.clientRepository.save(client);
     }
@@ -31,6 +32,7 @@ public class ClientService
      * @param client
      * @return
      */
+    @Transactional
     public Client update(Client client){
         return this.clientRepository.save(client);
     }
@@ -39,6 +41,7 @@ public class ClientService
      * Eliminar un cliente
      * @param client
      */
+    @Transactional
     public void delete(Client client){
         this.clientRepository.delete(client);
     }
